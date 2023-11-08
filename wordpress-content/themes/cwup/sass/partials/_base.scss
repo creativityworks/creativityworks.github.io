@@ -1,0 +1,52 @@
+$base-font-size: 14px;
+$base-line-height: 18px;
+
+$lead_paragraph_size: 18px;
+$lead_paragraph_line_height: 1.2;
+
+$color_bodytext: #1b1b1b;
+$color_link: #00a5e5;
+$color_dividers: #cccccc;
+$color_toptext: #616156;
+$color_secondary_nav: #58585a;
+$color_tagline: #00698e;
+$color_headings: #007d9a;
+$color_borders: #e0d8d0;
+$color_credits: #ad957a;
+$color_offwhite: #f6f2ed;
+$color_white: #ffffff;
+$color_pale_brown: #ede6de;
+$color_green_hero_headings: #136664;
+$color_hero_text: #464646;
+$color_black: #111111;
+$color_offblack: #1c1c1c;
+
+$color_blue: #00688d;
+$color_orange: #dd9311;
+$color_pink: #e03679;
+$color_teal: #01a09c;
+$color_turquoise: #00b7d6;
+$color_green: #55b143;
+$color_purple: #825bae;
+$color_yellow: #f0ae26;
+
+$color_subnav_blue: lighten($color_blue, 50%);
+$color_subnav_orange: #ffefd0;
+$color_subnav_pink: #fedeeb;
+$color_subnav_teal: lighten($color_teal, 50%);
+$color_subnav_turquoise: lighten($color_turquoise, 50%);
+$color_subnav_green: lighten($color_green, 50%);
+$color_subnav_purple: lighten($color_purple, 50%);
+$color_subnav_yellow: lighten($color_yellow, 50%);
+
+
+$nav_colors: blue orange pink teal turquoise green purple yellow;
+$nav_color_list: $color_blue $color_orange $color_pink $color_teal $color_turquoise $color_green $color_purple $color_yellow;
+$subnav_color_list: $color_subnav_blue $color_subnav_orange $color_subnav_pink $color_subnav_teal $color_subnav_turquoise $color_subnav_green $color_subnav_purple $color_subnav_yellow;
+
+@import "sprites/socialicons/*.png";
+@import "sprites/sidebar/*.png";
+@import "sprites/slider/*.png";
+@import "sprites/innerslider/*.png";
+@import "sprites/stories/*.png";
+@import "sprites/staff/*.png";

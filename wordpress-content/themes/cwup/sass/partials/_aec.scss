@@ -1,0 +1,11 @@
+$i: 1;
+@each $color in $nav_colors {
+    .#{$color} {
+        #aec-container {
+            h1, h2 {
+                color: nth($nav_color_list, $i);
+            }
+        }
+    }
+    $i: $i+1;
+}

@@ -1,0 +1,62 @@
+
+
+// NB: This is now used for courses + panel pages generally too
+article#main {
+    div.projects {
+        @include pie-clearfix;
+        div.project {
+            width: 212px;
+            float: left;
+            margin: 0 15px 30px 0;
+            position: relative;
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+            &:nth-of-type(3n+1) {
+                clear: left;
+            }
+            img.thumbnail {
+                width: 212px;
+                height: 117px;
+            }
+            h3 {
+                background: image-url('sprites/projects/heading.png') no-repeat;
+                position: absolute;
+                height: 31px;
+                width: 203px;
+                top: 80px;
+                left: 0px;
+                color: $color_bodytext;
+                padding: 18px 10px;
+                @include adjust-font-size-to(15px);
+                color: $color_secondary_nav;
+                line-height: 18px;
+                font-weight: normal;
+                a {
+                    @include link-colors($color_bodytext);
+                }
+            }
+            div.excerpt {
+                margin-top: 35px;
+                padding: 10px;
+                background: image-url('sprites/projects/readmorebg.png') no-repeat bottom left;
+                p {
+                    @include adjust-font-size-to(14px);
+                }
+            }
+            a.readmore {
+                display: block;
+                width: 70px;
+                margin-top: 20px;
+                padding-left: 10px;
+            }
+        }
+
+    }
+}
+
+.lt-ie9 article#main {
+    div.projects div.project {
+        margin-right: 10px;
+    }
+}

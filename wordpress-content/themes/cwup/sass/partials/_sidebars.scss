@@ -1,0 +1,156 @@
+.sidebar {
+    h2 {
+        color: $color_white;
+    }
+    &>div {
+        margin-bottom: 20px;
+    }
+
+    .blue {
+        @include sidebar-sprite('blue_ctoa');
+        height: 75px;
+        color: $color_white;
+        h2 {
+            margin: 0;
+            padding: 10px 0 0 20px;
+        }
+        a {
+            @include squish-text();
+        }
+    }
+
+    .green {
+        @include sidebar-sprite('green_ctoa');
+        height: 86px;
+        color: $color_white;
+        h2 {
+            margin: 0;
+            padding: 10px 0 0 20px;
+            width: 100px;
+            line-height: 27px;
+        }
+        a {
+            @include squish-text();
+        }
+    }
+
+    .speech {
+        @include sidebar-sprite('speech_ctoa');
+        height: 204px;
+        color: $color_white;
+        text-align: center;
+        line-height: 22px;
+        a {
+            @include link-colors($color_white);
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        h2 {
+            margin: 0;
+            padding-top: 20px;
+        }
+        strong {
+            @include adjust-font-size-to(16px, 1);
+        }
+    }
+    .donate-text {
+        padding: 10px;
+        position: relative;
+        padding-top: 65px;
+        width: 207px;
+        background: image-url('sprites/sidebar/donate-divider.png') no-repeat;
+        @include clearfix;
+        h2 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 207px;
+            height: 24px;
+            padding: 15px 10px;
+            @include sidebar-sprite('donate_top');
+            color: $color_white;
+        }
+        a.readmore {
+            float: right;
+            margin: 40px 0 5px 0;
+            @include link-colors($color_turquoise);
+            background-image: image-url('sprites/misc/turquoise_right.png');
+        }
+    }
+
+    .quote {
+        @include sidebar-sprite('quote_bg');
+        padding: 10px 20px;
+        width: 186px;
+        height: 249px;
+        @include adjust-font-size-to(16px);
+        line-height: 20px;
+        text-indent: 40px;
+    }
+
+    .widget_sp_image {
+        background: $color_offwhite;
+        @include border-radius(8px);
+        @include clearfix;
+        padding: 10px;
+        h2 {
+            font-weight: normal;
+            margin: 5px 0;
+            color: $color_turquoise;
+            line-height: 1.1em;
+        }
+        img {
+            border: $color_white 5px solid;
+        }
+        .widget_sp_image-description {
+            background:  image-url('sprites/sidebar/image-divider.png') no-repeat 5px 100%;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        a.readmore {
+            color: $color_bodytext;
+            float: right;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            background-image: image-url('sprites/misc/pink_right.png');
+        }
+    }
+
+    .widget_youtube {
+        position: relative;
+        img {
+            width: 227px;
+            height: 170px;
+        }
+        h2 {
+            color: $color_bodytext;
+            margin-bottom: 0.4em;
+        }
+        a {
+            display: block;
+            position: relative;
+        }
+        p {
+            margin: 0;
+        }
+        img.play_icon {
+            width: 66px;
+            height: 67px;
+            position: absolute;
+            top: 50px;
+            left: 83px;
+        }
+    }
+
+    .widget_FacebookLikeBox {
+        iframe {
+            background: #fff;
+        }
+    }
+
+}

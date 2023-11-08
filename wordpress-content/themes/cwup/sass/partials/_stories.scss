@@ -1,0 +1,107 @@
+article#main.stories-list {
+    h2 {
+        color: $color_bodytext;
+        padding: 0 10px;
+        font-weight: normal;
+        @include adjust-font-size-to(18px);
+        line-height: 32px;
+        &.stories {
+            @include stories-sprite('heading_stories');
+            width: stories-sprite-width('heading_stories');
+            height: stories-sprite-height('heading_stories');
+        }
+        &.audio {
+            @include stories-sprite('heading_audio');
+            width: stories-sprite-width('heading_audio');
+            height: stories-sprite-height('heading_audio');
+        }
+        &.video {
+            @include stories-sprite('heading_video');
+            width: stories-sprite-width('heading_video');
+            height: stories-sprite-height('heading_video');
+        }
+    }
+
+    ul.stories {
+        @include no-bullet;
+        margin: 0;
+        padding: 0 10px;
+        li {
+            @include clearfix;
+            border-bottom: $color_borders 1px dotted;
+            padding: 10px 0;
+            h3 {
+                float: left;
+                color: $color_pink;
+                width: 150px;
+                margin-right: 10px;
+                margin-top: 0;
+                a {
+                    @include link-colors($color_pink);
+                }
+            }
+            div.excerpt {
+                float: left;
+                width: 380px;
+                p, p:first-of-type {
+                    @include adjust-font-size-to(14px);
+                    margin: 0;
+                }
+            }
+        }
+        a.readstory {
+            float: left;
+            display: block;
+            width: 90px;
+            margin-left: 10px;
+        }
+    }
+
+    ul.relatedmedia {
+        li {
+            &:nth-child(4n) {
+                border-right: none;
+            }
+            &:nth-child(4n+1) {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+div.stories_jump {
+    background: $color_offwhite;
+    @include border-radius(8px);
+    padding: 10px;
+    width: 207px;
+    h2 {
+        margin: 0;
+        padding: 0;
+        color: $color_teal;
+        font-weight: normal;
+    }
+    ul {
+        @include no-bullets;
+        padding-left: 0;
+        li {
+            padding-left: 45px;
+            height: 40px;
+            line-height: 40px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            width: 100px;
+            &.stories {
+                background-image: image-url('sprites/stories/jump_stories.png');
+            }
+            &.audio {
+                background-image: image-url('sprites/stories/jump_audio.png');
+            }
+            &.video {
+                background-image: image-url('sprites/stories/jump_video.png');
+            }
+            a {
+                float: right;
+            }
+        }
+    }
+}

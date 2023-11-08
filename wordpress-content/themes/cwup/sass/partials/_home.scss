@@ -1,0 +1,228 @@
+section.hero {
+    background: image-url('bg/hero_bg.png') no-repeat;
+    margin: 0 auto 40px auto;
+    width: 950px;
+    height: 379px;
+    div.left {
+        float: left;
+        width: 227px;
+        img {
+            border-top: $color_borders 1px solid;
+            margin: 2px 5px;
+            &.first {
+                border-top: 0;
+            }
+        }
+    }
+    div.right {
+        float: right;
+        width: 723px;
+    }
+}
+
+section.panel {
+    width: 300px;
+    float: left;
+    margin: 0 26px 40px 0;
+    position: relative;
+    &.first {
+        margin-left: 1px;
+    }
+    &.last {
+        margin-right: 1px;
+    }
+    h3 {
+        position: absolute;
+        z-index: 10;
+        left: -8px;
+        top: -40px;
+        width: 319px;
+        height: 83px;
+        color: #fff;
+        @include adjust-font-size-to(23px);
+        line-height: 83px;
+        text-align: center;
+        margin: 0;
+        background-position: top left;
+        background-repeat: no-repeat;
+        font-weight: normal;
+        a {
+            @include unstyled-link;
+            @include link-colors($color_white);
+        }
+    }
+    div.image {
+        z-index: 5;
+        position: relative;
+        img {
+            display: block;
+        }
+        div.bg.south {
+            background: image-url('sprites/misc/white_grunge_image.png') no-repeat top left;
+            position: absolute;
+            width: 310px;
+            height: 25px;
+            bottom: -3px;
+            left: -5px;
+            z-index: 10;
+        }
+    }
+    div.bottom {
+        @include clearfix;
+        border: $color_borders 2px solid;
+        border-top-width: 0;
+        @include border-bottom-radius(5px);
+        padding: 10px 15px 15px 15px;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        p {
+            margin: 0 0 1em 0;
+            &:first-of-type {
+                @include adjust-font-size-to($lead_paragraph_size, $lead_paragraph_line_height);
+            }
+        }
+    }
+
+    a.readmore {
+        margin: 20px 15px 5px 0;
+        float: right;
+        @include adjust-font-size-to(16px, 1);
+    }
+
+    @each $color in (orange, teal, pink) {
+        &.#{$color} {
+            h3 {
+                background-image: image-url('sprites/home/#{$color}_top.png');
+            }
+            div.bottom {
+                background-image: image-url('sprites/home/#{$color}_bottom.png');
+            }
+        }
+    }
+}
+
+section.pinterest {
+    clear: both;
+    @include border-radius(5px);
+    border: $color_borders 2px solid;
+    background-color: $color_offwhite;
+    padding: 10px;
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    img.title {
+        margin-bottom: 20px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        @include horizontal-list;
+        li {
+            white-space: normal;
+            text-align: center;
+            @include adjust-font-size-to(12px);
+            a {
+                @include unstyled-link;
+                display: block;
+            }
+        }
+    }
+}
+
+section.testimonials {
+    float: left;
+    width: 282px;
+    margin-right: 20px;
+    h3 {
+        color: $color_teal;
+        margin: 10px 0 0 0;
+        font-weight: normal;
+        @include adjust-font-size-to(24px);
+    }
+    blockquote {
+        margin: 5px 0;
+        padding: 7px 0;
+        @include adjust-font-size-to(18px, 1.2);
+        color: $color_pink;
+        text-indent: 40px;
+        background: image-url('sprites/misc/speech_open.png') no-repeat;
+        display: none;
+        &.first {
+            display: block;
+        }
+        span {
+            display: inline-block;
+            width: 33px;
+            height: 24px;
+            margin: 5px 0 0 4px;
+            background: image-url('sprites/misc/speech_close.png') no-repeat;
+        }
+        small {
+            margin-top: 10px;
+            display: block;
+            color: $color_teal;
+            text-indent: 0;
+            @include adjust-font-size-to(16px, 1, 18px);
+        }
+    }
+}
+
+section.latestpost {
+    @include clearfix;
+    float: left;
+    width: 383px;
+    @include border-radius(5px);
+    border: $color_borders 2px solid;
+    background-color: $color_offwhite;
+    padding: 10px;
+    h3 {
+        color: $color_teal;
+        margin: 0px 0 0 0;
+        font-weight: normal;
+        @include adjust-font-size-to(24px);
+    }
+    h4 {
+        color: $color_pink;
+        margin: 0;
+        font-weight: normal;
+        @include adjust-font-size-to(15px, 1);
+    }
+    time {
+        @include adjust-font-size-to(13px, 1);
+    }
+    img {
+        float: left;
+        border: #fff 2px solid;
+        margin: 0 5px 5px 0;
+    }
+    a.readmore {
+        margin: 0px 15px 5px 0;
+        float: right;
+    }
+}
+
+a.participants, a.whatson {
+    display: block;
+    float: left;
+    height: 66px;
+    margin: 20px 0 10px 0;
+    @include hide-text;
+}
+
+a.participants {
+    clear: left;
+    margin-left: 240px;
+    margin-right: 20px;
+    @include socialicons-sprite('participant_stories');
+    width: 286px;
+}
+
+a.whatson {
+    @include socialicons-sprite('whatson');
+    width: 227px;
+}
+
+.photocredit {
+    clear: left;
+}

@@ -1,0 +1,58 @@
+article#main.constantcontact {
+
+    div.constant_contact {
+        @include pie-clearfix;
+        background-color: $color_pale_brown;
+        padding: 15px;
+        position: relative;
+        z-index: 5;
+        margin-bottom: 80px;
+        h2 {
+            @include adjust-font-size-to(20px);
+            line-height: 22px;
+            font-weight: normal;
+        }
+        form {
+            fieldset {
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 330px;
+            }
+            input {
+                margin: 0 20px;
+            }
+            input.text {
+                float: right;
+                width: 250px;
+                height: 20px;
+                padding: 2px;
+                line-height: 14px;
+                margin-left: 5px;
+                margin-right: 0;
+                vertical-align: text-bottom;
+                margin-bottom: -2px;
+            }
+
+            input.signup {
+                float: right;
+                background: image-url('sprites/constantcontact/signup.png') no-repeat;
+                width: 119px;
+                height: 41px;
+                @include squish-text;
+                border: none;
+                margin: 20px 0 0 0;
+                padding: 0;
+            }
+        }
+        .bg.bottom {
+            position: absolute;
+            background: image-url('sprites/constantcontact/bottom.png') no-repeat;
+            width: 601px;
+            height: 32px;
+            left: 33px;
+            bottom: -20px;
+            z-index: 1;
+        }
+    }
+
+}

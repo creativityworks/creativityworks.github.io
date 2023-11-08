@@ -1,0 +1,71 @@
+RewriteEngine On
+
+RewriteRule ^2014/02/arts\-council\-writes\-a\-case\-study\-on\-creativity\-works/$ /funding/funded-projects/case-studies/creativity-works-inspiring-and-empowering-people/ [R=301,L]
+
+RewriteRule ^(20[0-9]{2}(/[0-9]{2})?)/page/1/$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+RewriteRule ^category/a\-profile\-of/page/1/?$ /category/a-profile-of/ [R=301,L]
+RewriteRule ^category/cocreate/page/1/?$ /category/cocreate/ [R=301,L]
+RewriteRule ^category/directors\-blog/page/1/?$ /category/directors-blog/ [R=301,L]
+RewriteRule ^category/events/page/1/?$ /category/events/ [R=301,L]
+RewriteRule ^category/general/page/1/?$ /category/general/ [R=301,L]
+RewriteRule ^category/job\-opportunities/page/1/?$ /category/job-opportunities/ [R=301,L]
+RewriteRule ^category/uncategorized/page/1/?$ /category/uncategorized/ [R=301,L]
+RewriteRule ^news/page/1/?$ /news/ [R=301,L]
+
+
+RewriteCond %{QUERY_STRING} ^page_id=2197$
+RewriteRule ^.* /page_id/2197/ [R=302,L]
+RewriteCond %{QUERY_STRING} ^page_id=2345$
+RewriteRule ^.* /page_id/2345/ [R=302,L]
+RewriteCond %{QUERY_STRING} ^page_id=5171$
+RewriteRule ^.* /page_id/5171/ [R=302,L]
+RewriteCond %{QUERY_STRING} ^page_id=637$
+RewriteRule ^.* /page_id/637/ [R=302,L]
+RewriteCond %{QUERY_STRING} ^page_id=921$
+RewriteRule ^.* /page_id/921/ [R=302,L]
+RewriteCond %{QUERY_STRING} ^post_type=attachment$
+RewriteRule ^category/general/?$ /category/general/post_type/attachment/ [R=302,L]
+RewriteCond %{QUERY_STRING} ^post_type=attachment$
+RewriteRule ^category/uncategorized/?$ /category/uncategorized/post_type/attachment/ [R=302,L]
+
+    # Hey-ho let's go!
+    RewriteEngine On
+
+# MIGRATION REWRITES
+RewriteRule ^news.php$ /news/ [R=301,L]
+RewriteRule ^projects.php$ /what-we-do/ [R=301,L]
+RewriteRule ^mytimemyspace.php$ /what-we-do/creative-activities/my-time-my-space/ [R=301,L]
+RewriteRule ^cocreate.php$ /what-we-do/our-services/cocreate/ [R=301,L]
+RewriteRule ^creativelinks.php$ /what-we-do/our-services/creative-project-delivery/4029-2/ [R=301,L]
+RewriteRule ^pathways.php$ /what-we-do/creative-activities/networks/  [R=301,L]
+RewriteRule ^ketaminesupportgroup.php$ /what-we-do/projects/ketamine-support-group/ [R=301,L]
+RewriteRule ^offtherecordyoungcarers.php$ /what-we-do/projects/working-with-young-carers/ [R=301,L]
+RewriteRule ^artworks.php$ /what-we-do/projects/artworks-festival/ [R=301,L]
+RewriteRule ^BLT.php$ /what-we-do/projects/big-local-trustgetting-people-involved/ [R=301,L]
+RewriteRule ^WMHD.php$ /what-we-do/projects/world-mental-health-day/ [R=301,L]
+RewriteRule ^barnadostheartgroup.php$ /what-we-do/projects/the-art-group/ [R=301,L]
+
+RewriteRule ^yourstories.php$ /what-we-do/your-stories/ [R=301,L]
+RewriteRule ^paulsstory.php$ /what-we-do/your-stories/ [R=301,L]
+RewriteRule ^Samsstory.php$ /what-we-do/stories/sams-story/ [R=301,L]
+RewriteRule ^winnysstory.php$ /what-we-do/stories/winnies-story/ [R=301,L]
+RewriteRule ^catherinesstory.php$ /what-we-do/stories/catherines-story/ [R=301,L]
+RewriteRule ^ellesstory.php$ /what-we-do/stories/elles-story/ [R=301,L]
+RewriteRule ^audio.php$ /what-we-do/your-stories/ [R=301,L]
+RewriteRule ^video.php$ /what-we-do/your-stories/ [R=301,L]
+
+RewriteRule ^artists.php$ /get-involved/artists-area/ [R=301,L]
+RewriteRule ^volunteer.php$ /get-involved/as-an-individual/volunteering/ [R=301,L]
+RewriteRule ^funders.php$ /get-involved/fundraising-events/trusts-and-foundations/ [R=301,L]
+RewriteRule ^library.php$ /what-we-do/your-stories/ [R=301,L]
+RewriteRule ^aboutus.php$ /about-us/ [R=301,L]
+RewriteRule ^financialreports.php$ /about-us/ [R=301,L]
+RewriteRule ^staff.php$ /about-us/staff-info/ [R=301,L]
+RewriteRule ^FAQ.php$ /about-us/ [R=301,L]
+RewriteRule ^history.php$ /about-us/our-history/ [R=301,L]
+RewriteRule ^links.php$ / [R=301,L]
+RewriteRule ^definitions.php$ / [R=301,L]
+RewriteRule ^contact.php$ /contact-us/ [R=301,L]
+
+# END MIGRATION REWRITES

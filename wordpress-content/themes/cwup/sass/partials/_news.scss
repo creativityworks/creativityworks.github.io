@@ -1,0 +1,96 @@
+article#main.news {
+    h2.newsitem {
+        @include adjust-font-size-to(18px);
+        margin-top: 0;
+        background: image-url('sprites/news/title_background.png') no-repeat top left;
+        width: 480px;
+        height: 36px;
+        padding: 0 10px;
+        line-height: 36px;
+        font-weight: normal;
+        color: $color_bodytext;
+        a {
+            @include link-colors($color_bodytext);
+        }
+    }
+    div.newsinner {
+        padding: 0 10px;
+        margin-bottom: 20px;
+        @include clearfix;
+    }
+
+    time {
+        color: $color_secondary_nav;
+    }
+
+    p {
+        @include adjust-font-size-to(14px);
+    }
+
+    img.thumbnail {
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+
+    div.image {
+        position: relative;
+        margin: 20px 0 40px 0;
+        img {
+            position: relative;
+            z-index: 10;
+        }
+        div.bg.bottom {
+            position: absolute;
+            width: 489px;
+            height: 28px;
+            background: image-url('sprites/news/image_bottom.png') no-repeat top left;
+            z-index: 5;
+            bottom: -15px;
+            left: 0px;
+        }
+    }
+
+    div.pagination {
+        position: relative;
+        text-align: right;
+        margin: 20px 10px;
+        a, span {
+            @include adjust-font-size-to(13px);
+            font-weight: bold;
+            display: inline-block;
+            height: 22px;
+            line-height: 22px;
+            padding: 0 5px;
+        }
+        span.current, a:hover {
+            background-color: $color_purple;
+            color: $color_white;
+
+        }
+        .bg {
+            position: absolute;
+            background: image-url('sprites/news/divider.png') no-repeat top left;
+            width: 495px;
+            height: 8px;
+            left: -10px;
+            &.top {
+                top: -10px;
+            }
+            &.bottom {
+                bottom: -10px;
+            }
+        }
+    }
+
+    div.rss {
+        width: 200px;
+        float: right;
+        margin-top: 20px;
+    }
+
+    div.social {
+        background: image-url('sprites/news/divider.png') no-repeat top left;
+        padding-top: 30px;
+    }
+
+}

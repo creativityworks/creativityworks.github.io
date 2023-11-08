@@ -1,0 +1,23 @@
+div.gallery {
+    @include clearfix;
+    div.item {
+        position: relative;
+        float: left;
+        width: 226px;
+        margin: 0 1px 1px 0;
+        overflow: hidden;
+        div.caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $color_turquoise;
+            color: $color_white;
+            padding: 15px;
+            @include opacity(0.85);
+        }
+        a {
+            display: block;
+        }
+    }
+}

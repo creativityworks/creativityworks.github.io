@@ -1,0 +1,193 @@
+#content {
+    div.slider {
+        position: relative;
+        ul.panes {
+            @include no-bullets;
+            padding: 0;
+            margin: 5px;
+            li {
+                margin: 0;
+                padding: 0;
+                display: none;
+                position: relative;
+                z-index: 5;
+                height: 329px;
+                &.current {
+                    display: block;
+                }
+                a {
+                    display: block;
+                }
+                .caption {
+                    position: absolute;
+                    width: 380px;
+                    height: 185px;
+                    padding: 15px;
+                    top: 25px;
+                    left: 15px;
+                    h2 {
+                        color: $color_green_hero_headings;
+                        margin: 0;
+                        @include adjust-font-size-to(38px, 2);
+                        font-weight: normal;
+                    }
+                    p {
+                        color: #464646;
+                        @include adjust-font-size-to(18px, 1.5);
+                    }
+                }
+                &.landscape {
+                    div.caption {
+                        background: $color_yellow;
+                        p {
+                            color: #464646;
+                            @include adjust-font-size-to(18px, 1.5);
+                        }
+                    }
+                }
+                &.portrait {
+                    background-image: image-url('bg/hero_inner.jpg');
+                    background-repeat: no-repeat;
+                    img {
+                        display: block;
+                        position: absolute;
+                        border: $color_white 5px solid;
+                        top: 25px;
+                        right: 25px;
+                    }
+                    div.caption {
+                        padding: 15px 0 15px 15px;
+                        left: 0;
+                        p {
+                            color: $color_white;
+                        }
+                    }
+                }
+            }
+        }
+        div.control {
+            position: absolute;
+            z-index: 10;
+            bottom: 25px;
+            left: 25px;
+            @include slider-sprite('control_background');
+            width: 191px;
+            height: 53px;
+            ul {
+                @include inline-block-list;
+                text-align: center;
+                li {
+                    margin: 20px 5px 0 5px;
+                    a {
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        @include slider-sprite('control_off');
+                        &:hover, &.current {
+                            @include slider-sprite('control_on');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slider.inner {
+        margin-bottom: 40px;
+        ul.panes {
+            margin: 0;
+            background: $color_white;
+            position: relative;
+            z-index: 2;
+            li {
+                height: 250px;
+            }
+        }
+        div.control {
+            left: auto;
+            bottom: -12px;
+            right: 5px;
+        }
+        div.bg {
+            position: absolute;
+
+            &.north {
+                width: innerslider-sprite-width('orange_top_wide');
+                height: innerslider-sprite-height('orange_top_wide');
+                top: -15px;
+                left: -10px;
+                z-index: 8;
+            }
+            &.south {
+                @include innerslider-sprite('bottom_wide');
+                width: innerslider-sprite-width('bottom_wide');
+                height: innerslider-sprite-height('bottom_wide');
+                left: 65px;
+                bottom: -20px;
+                z-index: 1;
+            }
+            &.west {
+                @include innerslider-sprite('left');
+                width: innerslider-sprite-width('left');
+                height: innerslider-sprite-height('left');
+                left: -10px;
+                top: -5px;
+                z-index: 7;
+            }
+            &.east {
+                @include innerslider-sprite('right');
+                width: innerslider-sprite-width('right');
+                height: innerslider-sprite-height('right');
+                right: -10px;
+                top: -10px;
+                z-index: 7;
+            }
+        }
+    }
+}
+
+@each $color in orange pink {
+    .#{$color} {
+        #content {
+            .slider.inner {
+                div.bg.north {
+                    @include innerslider-sprite('#{$color}_top_wide');
+                }
+            }
+        }
+    }
+}
+#content {
+    .slider.inner.narrow {
+        div.bg {
+            &.north {
+                @include innerslider-sprite('pink_top_narrow');
+                width: innerslider-sprite-width('pink_top_narrow');
+                height: innerslider-sprite-height('pink_top_narrow');
+                top: -15px;
+                left: -10px;
+                z-index: 8;
+            }
+            &.south {
+                @include innerslider-sprite('bottom_narrow');
+                width: innerslider-sprite-width('bottom_narrow');
+                height: innerslider-sprite-height('bottom_narrow');
+                left: 5px;
+                bottom: -20px;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@each $color in pink turquoise {
+    .#{$color} {
+        #content {
+            .slider.inner.narrow {
+                div.bg.north {
+                    @include innerslider-sprite('#{$color}_top_narrow');
+                }
+            }
+        }
+    }
+}

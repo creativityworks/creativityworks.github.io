@@ -1,0 +1,98 @@
+#content {
+    #crumb {
+        a {
+            @include unstyled-link;
+            @include hover-link;
+        }
+    }
+    a.totop {
+        padding-left: 25px;
+        background-repeat: no-repeat;
+        background-position: left 3px;
+    }
+}
+
+div.box {
+    float: left;
+    width: 710px;
+    @include clearfix;
+    background: $color_white;
+    @include border-radius(8px);
+    border: $color_borders 2px solid;
+}
+
+article#main {
+    float: left;
+    padding: 20px;
+    width: 670px;
+    >p:first-of-type {
+        @include adjust-font-size-to($lead_paragraph_size, $lead_paragraph_line_height);
+    }
+    ul {
+        li {
+            margin: 10px 0;
+        }
+    }
+}
+
+.innernav article#main {
+    width: 500px;
+    padding-left: 10px;
+}
+
+div.box.full {
+    width: 950px;
+}
+
+.full article#main {
+    width: 910px;
+}
+
+/** color stuff */
+@each $color in $nav_colors {
+    .#{$color} a.totop {
+        background-image: image-url('sprites/misc/#{$color}_up.png');
+    }
+}
+
+.orange div.social {
+    padding-top: 33px;
+    background: image-url('sprites/misc/orange_content_bottom.png') no-repeat;
+}
+
+.single-course .booking_panel {
+    @include pie-clearfix;
+    @include adjust-font-size-to(18px, 1);
+    background-color: $color_pale_brown;
+    padding: 15px;
+    position: relative;
+    z-index: 5;
+    margin-bottom: 40px;
+    p {
+        display: block;
+        float: left;
+        width: 300px;
+    }
+    a {
+        display: block;
+        float: right;
+    }
+    .bg.bottom {
+        position: absolute;
+        @include innerslider-sprite('bottom_narrow');
+        width: innerslider-sprite-width('bottom_narrow');
+        height: innerslider-sprite-height('bottom_narrow');
+        left: 3px;
+        bottom: -20px;
+        z-index: 1;
+    }
+}
+
+#wp-realtime-sitemap-pages a,
+#wp-realtime-sitemap-posts a,
+#wp-realtime-sitemap-project a,
+#wp-realtime-sitemap-story a,
+#wp-realtime-sitemap-archives a,
+#wp-realtime-sitemap-categories a {
+    color: $color_blue !important;
+}
